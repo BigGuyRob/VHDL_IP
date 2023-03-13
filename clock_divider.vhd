@@ -37,8 +37,6 @@ begin
     begin
     
         if rising_edge(clk) then
-                -- count one full led period (1 Hz)
-                -- if 125MHz is 124999999 then half would be 2Hz
                 if (unsigned(counter) < (clock_frequency/division_integer)) then
                     counter <= std_logic_vector(unsigned(counter) + 1);
                     div_out <= '0';
