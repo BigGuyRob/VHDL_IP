@@ -1,9 +1,9 @@
 ----------------------------------------------------------------------------------
--- Company: 
+-- Company: Rutgers University New Brunswick
 -- Engineer: Robert Reid
 -- 
 -- Create Date: 02/09/2023 07:25:41 PM
--- Design Name: 
+-- Design Name: button debouncing circuit
 -- Module Name: debounce - Behavioral
 -- Project Name: 
 -- Target Devices: xc7z010-clg400-1
@@ -23,7 +23,7 @@ entity debounce is
         dbnc : out std_logic);
 end debounce;
 
-architecture Behavioral of debounce is
+architecture Behavioral of debounce is --given a 125MHz clock
     constant threshold : integer := 2500000; --20ms = 200kns /8ns per cycle = 25000
     -- signal debouncer_shift_reg : std_logic_vector(1 downto 0);
     signal counter : std_logic_vector(21 downto 0) := (others => '0');
