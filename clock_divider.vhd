@@ -1,16 +1,3 @@
-----------------------------------------------------------------------------------
--- Company: Rutgers University New Brunswick 
--- Engineer: Robert Reid 
--- 
--- Create Date: 01/23/2023 09:21:13 PM
--- Design Name: generic clock divider
--- Module Name: clock_divider - Behavioral
--- Project Name: generic clock divider
--- Target Devices: XC7Z010CLG400-1
--- Tool Versions: 
--- Description: 
-
-----------------------------------------------------------------------------------
 library ieee;
     use ieee.std_logic_1164.all;
     use ieee.numeric_std.all;
@@ -37,7 +24,8 @@ begin
     begin
     
         if rising_edge(clk) then
-                if (unsigned(counter) < (clock_frequency/division_integer)) then
+                
+                if (unsigned(counter) < ((clock_frequency/division_integer) - 1)) then
                     counter <= std_logic_vector(unsigned(counter) + 1);
                     div_out <= '0';
                 else
