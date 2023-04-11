@@ -12,14 +12,14 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
-entity my_alu is
+entity alu is
     port(A, B : in std_logic_vector(3 downto 0);
          clk : in std_logic;
          opcode : in std_logic_vector(3 downto 0);
          output : out std_logic_vector(3 downto 0));
-end my_alu;
+end alu;
 
-architecture Behavioral of my_alu is
+architecture Behavioral of alu is
     signal F : std_logic_vector(3 downto 0);
     signal ZERO : std_logic_vector(3 downto 0) := "0000";
 begin
